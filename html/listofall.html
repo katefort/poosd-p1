@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+	@import url('https://fontawesome.com/v6.0/icons/user-plus?s=thin');
+
+	font-family: "Poppins" , sans-serif;
+
+	*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+	margin: 0;
+font-family: "Poppins" , sans-serif;
+}
+
+.table{
+	font-family: "Poppins" , sans-serif;
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: 3px;
+}
+
+.caption{
+	font-family: "Poppins" , sans-serif;
+
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+}
+
+.thead{
+	font-family: "Poppins" , sans-serif;
+  display: table-header-group;
+  font-weight: bold;
+}
+
+.tbody{
+
+	font-family: "Poppins" , sans-serif;
+
+  display: table-row-group;
+}
+
+.tr{
+	font-family: "Poppins" , sans-serif;
+
+  display: table-row;
+}
+
+.th{
+  border-bottom: 1px dashed #cccccc;
+}
+
+.tr:nth-child(odd){
+  background: #f5f5f5;
+}
+
+.th,
+.td{
+  display: table-cell;
+}
+
+.td{
+  padding: 10px 0;
+}
+
+.label{
+  display: none;
+}
+
+@media all and (max-width: 600px)
+{
+  .thead{
+    display: none;
+  }
+  .tr{
+    display: block;
+    margin-bottom: 1.5em;
+    padding: 10px;
+  }
+  .td{
+    display: inherit;
+    padding: 0;
+  }
+  .label{
+		font-family: "Poppins" , sans-serif;
+
+    font-weight: bold;
+    display: inline-block;
+    min-width: 120px;
+  }
+}
+/*==============================================================================*/
+
+/*navigation css starts here*/
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #7d2ae8;}
+
+ul.topnav li a.active {background-color: #7d2ae8;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #7d2ae8;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*==============================================================================*/
+
+</style>
+</head>
+<body>
+	<ul class="topnav">
+	  <li><a class="active" href="home.html">Home</a></li>
+	  <li class="right"><a href="#about">About</a></li>
+		<li class="dropdown">
+	    <a href="javascript:void(0)" class="dropbtn">Contacts?</a>
+	    <div class="dropdown-content">
+	      <a href="listofall.html">All Contacts</a>
+	      <a href="#">Add Contact</a>
+	      <a href="#">Delete Contact</a>
+	    </div>
+	  </li>
+	</ul>
+
+<div class="contacts table" aria-labelledby="contacts-caption-text">
+  <span class="caption" id="contacts-caption-text" align= "center">&emsp;<br></span>
+	<span class="caption" id="contacts-caption-text" align= "center">&emsp;<br></span>
+
+	<h4><br></h4>
+
+  <div class="contacts-header thead">
+    <span class="th" id="th-name">Name:</span>
+    <span class="th" id="th-phone">Phone:</span>
+  </div>
+  <ul class="tbody">
+    <li class="tr" itemscope itemtype="http://schema.org/Person">
+      <span class="td">
+        <span class="label">Name:</span>
+        <span class="data" itemprop="name" aria-labelledby="th-name">johnsmith</span>
+      </span>
+
+      <span class="td">
+        <span class="label">Phone:</span>
+        <span class="data" itemprop="telephone" aria-labelledby="th-phone">+</span>
+      </span>
+
+    </li>
+    <li class="tr" itemscope itemtype="http://schema.org/Person">
+      <span class="td">
+        <span class="label">Name:</span>
+        <span class="data" itemprop="name" aria-labelledby="th-name">johnsmith</span>
+      </span>
+
+      <span class="td">
+        <span class="label">Phone:</span>
+        <span class="data" itemprop="telephone" aria-labelledby="th-phone">+</span>
+      </span>
+
+    </li>
+  </ul>
+</div>
+</body>
+</html>

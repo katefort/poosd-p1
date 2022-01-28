@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<link rel="stylesheet" href="style.css">-->
+<!-- fonts fromt Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+	@import url('https://fontawesome.com/v6.0/icons/user-plus?s=thin');
+
+	font-family: "Poppins" , sans-serif;
+
+body {
+	margin: 0;
+font-family: "Poppins" , sans-serif;
+}
+* {
+  box-sizing: border-box;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+form.example input[type=text] {
+
+  padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+}
+
+.btn sub{
+	fpadding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+}
+.success {
+  color: green;
+}
+.text-center {
+  text-align: center;
+}
+
+.button.block {
+    display: block;
+    width: 200px;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+form.example button
+{
+  float: left;
+  width: 20%;
+  padding: 20px;
+  background: #7d2ae8;
+  color: black;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 50px;
+
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+form.sub button2
+{
+	padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 90%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+	cursor: pointer;
+}
+
+form.sub button2:hover
+{
+  background: #7d2ae8;
+}
+
+form.sub button3
+{
+	padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 90%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+	cursor: pointer;
+}
+
+form.sub button3:hover
+{
+  background: #7d2ae8;
+}
+
+
+/*==============================================================================*/
+
+/*navigation css starts here*/
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #7d2ae8;}
+
+ul.topnav li a.active {background-color: #7d2ae8;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #7d2ae8;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*==============================================================================*/
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<ul class="topnav">
+  <li><a class="active" href="home.html">Home</a></li>
+  <li class="right"><a href="#about">About</a></li>
+	<li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Contacts?</a>
+    <div class="dropdown-content">
+      <a href="listofall.html">All Contacts</a>
+      <a href="#">Add Contact</a>
+      <a href="#">Delete Contact</a>
+    </div>
+  </li>
+</ul>
+
+<div style="padding:0 16px;">
+  <h2>Here we can add stuff</h2>
+	<p>We can have a list function, add, delete and search here</p>
+	<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+	  <input type="text" placeholder="Search Contact.." name="search2">
+	  <button type="submit" placeholder="go"><i class="fas fa-search"></i></button>
+
+	</form>
+
+
+</div>
+
+<div style="padding:0 16px;">
+
+	<form class="sub" action="/action_page.php" style="margin:auto;max-width:300px">
+	  <button2 type="submit" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins', sans-serif; font-weight:bold;"><i class="fa fa-user-plus"></i>&emsp;&emsp;Create Contact</button2>
+	</form>
+
+  <h4><br></h4>
+</div>
+
+<div style="padding:0 16px;">
+	<h4><br></h4>
+
+	<form class="sub" action="/action_page.php" style="margin:auto;max-width:300px">
+		<button3 type="submit" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins', sans-serif; font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Delete Contact</button3>
+
+	</form>
+
+  <h4><br></h4>
+</div>
+
+
+
+</body>
+</html>
