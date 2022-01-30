@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--HI this html doc will be uploaded to our website as the front end html-->
+<!--I decided to just name it index because it will be easier for front-end upload-->
+<!--signin.html will still  be up on our git just incase we mess this one upl-->
+
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+
+
+		<title> Login/Registration  </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--<link href="index.css" rel="stylesheet" >-->
+		<link href="css/index.css" rel="stylesheet"
+   </head>
+
+<body>
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+				<div class="text">
+          <span class="text-1"></span>
+        </div>
+
+      </div>
+      <div class="back">
+        <div class="text">
+          <span class="text-1">Register today to <br> get started!</span>
+        </div>
+      </div>
+    </div>
+
+	  <div class="forms">
+        <div class="form-content">
+
+					<!--LOGIN HERE-->
+
+					<div class="login-form">
+
+						<div class="title">Login</div>
+
+					<form action="home.html">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i><input type="text" id="login" class="text" placeholder="login" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i><input type="password" id= "password" class="text" placeholder="Enter your password" required>
+              </div>
+              <div class="button input-box">
+								<!--<button type="button" class="text" onclick="doLogin();"> Login</button>-->
+              <input type=submit onclick="doLogin();" value="Go!">
+							<span id="loginItem"></span>
+
+              </div>
+              <div class="text sign-up-text">No account? <label for="flip">Register here</label></div>
+            </div>
+        </form>
+
+      </div>
+
+			<!--REGISTERATION HERE-->
+        <div class="signup-form">
+          <div class="title">Register</div>
+        <form action="home.html">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" id ="firstNameNew" class= "text" placeholder="Enter your first name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+								<input type="text" id ="lastNameNew" class= "text" placeholder="Enter your first name" required>
+              </div>
+							<div class="input-box">
+                <i class="fas fa-user"></i>
+								<input type="text" id ="loginNew" class= "text" placeholder="Enter login name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+								<input type="text" id ="passwordNew" class= "text" placeholder="Enter login name" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" onclick="register();" value="Register">
+								<span id="registerItem"></span>
+              </div>
+
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+      </form>
+
+    </div>
+    </div>
+
+    </div>
+  </div>
+</body>
+</html>
