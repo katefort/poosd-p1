@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+	@import url('https://fontawesome.com/v6.0/icons/user-plus?s=thin');
+
+
+body {
+	margin: 0;
+font-family: "Poppins" , sans-serif;
+}
+* {
+  box-sizing: border-box;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+form.example input[type=text] {
+
+  padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+}
+
+.btn sub{
+	padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+}
+.success {
+  color: green;
+}
+.text-center {
+  text-align: center;
+}
+
+.button.block {
+    display: block;
+    width: 200px;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+form.example button
+{
+  float: left;
+  width: 20%;
+  padding: 20px;
+  background: #7d2ae8;
+  color: black;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 50px;
+
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+form.sub button2
+{
+	padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 90%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+	cursor: pointer;
+}
+
+form.sub button2:hover
+{
+  background: #7d2ae8;
+}
+
+form.sub button3
+{
+	padding: 20px;
+  font-size: 17px;
+  border: 1px solid grey;
+	border-radius: 20px;
+
+  float: left;
+  width: 90%;
+  background: #f1f1f1;
+	font-family: "Poppins" , sans-serif;
+	cursor: pointer;
+}
+
+form.sub button3:hover
+{
+  background: #7d2ae8;
+}
+
+
+/*==============================================================================*/
+
+/*navigation css starts here*/
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #7d2ae8;}
+
+ul.topnav li a.active {background-color: #7d2ae8;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right,
+  ul.topnav li {float: none;}
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+	font-family: "Poppins" , sans-serif;
+
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #7d2ae8;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*==============================================================================*/
