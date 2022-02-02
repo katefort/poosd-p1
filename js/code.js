@@ -2,190 +2,123 @@ const urlBase = 'http://group26poosd.xyz/LAMPAPI';
 const extension = 'php';
 
 
+
 let userId = 0;
 let firstName = "";
 let lastName = "";
+
 
 //referenced from RickL
 function register()
 {
-                // Add trim later
-                firstName = document.getElementById("firstNameNew").value;
-                lastName  = document.getElementById("lastNameNew").value;
+		// Add trim later
+		firstName = document.getElementById("firstNameNew").value;
+		lastName  = document.getElementById("lastNameNew").value;
 
-                let login = document.getElementById("loginNew");
-                let password = document.getElementById("passwordNew");
+		let login = document.getElementById("loginNew").value;
+		let password = document.getElementById("passwordNew").value;
 
-                document.getElementById("registerItem").innerHTML="";
+		document.getElementById("registerItem").innerHTML="";
 
-                let tmp  = {login: login, password: password, firstname: firstName, lastname: lastName};
-                let jsonPayload = JSON.stringify(tmp);
+		let tmp  = {login: login, password: password, firstname: firstName, lastname: lastName};
+		let jsonPayload = JSON.stringify(tmp);
 
-                let url = urlBase + '/Register.'+extension;
-                console.log(login);
-                console.log(firstName);
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", url, true);
-                //CHECK MAY CAUSE PROBLEMS
-                xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
+		let url = urlBase + '/Register.'+extension;
+		console.log(login);
+		console.log(firstName);
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		//CHECK MAY CAUSE PROBLEMS
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8")
 
-                try
-                {
-                        xhr.onreadystatechange = function()
-                        {
-                                if (this.readyState == 4 && this.status == 200)
-                                {
-                                        document.getElementById("registerItem").innerHTML = "User Created";
+		try
+		{
+			xhr.onreadystatechange = function()
+			{
+				if (this.readyState == 4 && this.status == 200)
+				{
+					document.getElementById("registerItem").innerHTML = "User Created";
 
-                                        let jsonObject= JSON.parse( xhr.responseText);
+					let jsonObject= JSON.parse( xhr.responseText);
 ;
-                                        saveCookie();
+					saveCookie();
 //check to see if that is valid
-                                        window.location.href = "index.html";
-                                        
-                                    }
-                            };
-                            xhr.send(jsonPayload);
-                    } catch (err)
-                    {
-                            document.getElementById("registerItem").innerHTML= err.message;
-    
-                    }
-                }
-                //referenced from RickL
+					window.location.href = "index.html";
+				}
+			};
+			xhr.send(jsonPayload);
+		} catch (err)
+		{
+			document.getElementById("registerItem").innerHTML= err.message;
 
+		}
+
+}
+//referenced from RickL
 function doLogin()
 {
 
-        let login = document.getElementById("login");
-        let password = document.getElementById("password");
+	let login = document.getElementById("login").value;
+	let password = document.getElementById("password").value;
 
-        document.getElementById("loginItem").innerHTML="";
+	document.getElementById("loginItem").innerHTML="";
 
-        let tmp  = {login: login, password: password};
-        let jsonPayload = JSON.stringify(tmp);
-        let url = urlBase + '/Login.'+extension;
+	let tmp  = {login: login, password: password};
+	let jsonPayload = JSON.stringify(tmp);
 
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
-        //CHECK MAY CAUSE PROBLEMS
-        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	let url = urlBase + '/Login.'+extension;
 
-        try
-        {
-                xhr.onreadystatechange = function()
-                {
-                        if (this.readyState == 4 && this.status == 200)
-                        {
-                                let jsonObject = JSON.parse(xhr.responseText);
-                                userId = jsonObject.id;
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	//CHECK MAY CAUSE PROBLEMS
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-                                if(userId < 1)
-                                {
-                                        document.getElementById("loginItem").innerHTML = "User or Password is incorrect";
-                                        return;
-                                }
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+				userId = jsonObject.id;
 
-                                firstName = jsonObject.firstName;
-                                lastName = jsonObject.lastName;
-                                saveCookie();
+				if(userId < 1)
+				{
+					document.getElementById("loginItem").innerHTML = "User or Password is incorrect";
+					return;
+				}
+
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+				saveCookie();
 //check to see if that is valid
-                                window.location.href = "home.html";
-                        }
-                    };
+				window.location.href = "home.html";
+			}
+		};
 
-                    xhr.send(jsonPayload);
-    
-            } catch (err) {
-                    document.getElementById("loginItem").innerHTML= err.message;
-    
-            }
-    
+		xhr.send(jsonPayload);
 
-    }
+	} catch (err) {
+		document.getElementById("loginItem").innerHTML= err.message;
 
-    function saveCookie()
-{
-
-        let minutes = 20;
-        let date = new Date();
-        date.setTime(date.getTime()+(minutes*60*1000));
-        document.cookie = "firstName= " + firstName + ",lastName = " + lastName + ", userId = "+userId +" , expires = "+date.toGMTString();
-}
-    /*
-
-const button = document.getElementById("formType")
-let endpoint = "";
-
-let userId = 0;
-let firstName = "";
-let lastName = "";
-
-const username= document.getElementById("login");
-const password= document.getElementById("password");
-
-
-function user{
-
-        var username, password;
-
-function doLogin()
-{
-        userId = 0;
-        firstName = "";
-        lastName = "";
-
-        let login = document.getElementById("loginName").value;
-        let password = document.getElementById("loginPassword").value;
-//      var hash = md5( password );
-
-        document.getElementById("loginResult").innerHTML = "";
-
-        let tmp = {login:login,password:password};
-//      var tmp = {login:login,password:hash};
-        let jsonPayload = JSON.stringify( tmp );
-
-        let url = urlBase + '/Login.' + extension;
-
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-        try
-        {
-                xhr.onreadystatechange = function()
-                {
-                        if (this.readyState == 4 && this.status == 200)
-                        {
-                                let jsonObject = JSON.parse( xhr.responseText );
-                                userId = jsonObject.id;
-
-                                if( userId < 1 )
-                                {
-                          {
-                                        document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-                                        return;
-                                }
-
-                                firstName = jsonObject.firstName;
-                                lastName = jsonObject.lastName;
-
-                                saveCookie();
-
-                                window.location.href = "color.html";
-                        }
-                };
-                xhr.send(jsonPayload);
-        }
-        catch(err)
-        {
-                document.getElementById("loginResult").innerHTML = err.message;
-        }
+	}
 
 }
 
-var publicAPI = {
-        login: doLogin
-    };
-    return publicAPI;
-}*/
+function saveCookie()
+{
+
+	let minutes = 20;
+	let date = new Date();
+	date.setTime(date.getTime()+(minutes*60*1000));
+	document.cookie = "firstName= " + firstName + ",lastName = " + lastName + ", userId = "+userId +" , expires = "+date.toGMTString();
+}
+//=======================================================================================================================================================
+function logout()
+{
+    userId = 0;
+    firstName = "";
+    lastName = "";
+    window.location.href = "index.html";
+}
 
