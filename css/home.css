@@ -12,7 +12,7 @@ font-family: "Poppins" , sans-serif;
 
 }
 
-form.example input[type=text] {
+.example input[type=text] {
 
   padding: 20px;
   font-size: 17px;
@@ -58,7 +58,7 @@ form.example input[type=text] {
 
 
 
-form.example button
+.example button
 {
   float: left;
   width: 20%;
@@ -73,17 +73,17 @@ form.example button
   cursor: pointer;
 }
 
-form.example button:hover {
+.example button:hover {
   background: #0b7dda;
 }
 
-form.example::after {
+.example::after {
   content: "";
   clear: both;
   display: table;
 }
 
-form.sub button2
+.sub button2
 {
 	padding: 20px;
   font-size: 17px;
@@ -97,12 +97,12 @@ form.sub button2
 	cursor: pointer;
 }
 
-form.sub button2:hover
+.sub button2:hover
 {
   background: #7d2ae8;
 }
 
-form.sub button3
+.sub button3
 {
 	padding: 20px;
   font-size: 17px;
@@ -116,7 +116,7 @@ form.sub button3
 	cursor: pointer;
 }
 
-form.sub button3:hover
+.sub button3:hover
 {
   background: #7d2ae8;
 }
@@ -199,3 +199,4 @@ li.dropdown {
   display: block;
 }
 /*==============================================================================*/
+
