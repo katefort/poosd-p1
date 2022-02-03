@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--HI this html doc will be uploaded to our website as the front end html-->
-<!--I decided to just name it index because it will be easier for front-end upload-->
-<!--signin.html will still  be up on our git just incase we mess this one upl-->
-
-
+<html>
 	<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -43,38 +38,37 @@
 
 						<div class="title">Login</div>
 
-					<form action="home.html">
+						<!--	<form>-->
             <div class="input-boxes">
               <div class="input-box">
-                <i class="fas fa-user"></i><input type="text" id="login" class="text" placeholder="login" required>
+                <i class="fas fa-user"></i><input type="text" id="login" class="text" placeholder="Username" required>
               </div>
               <div class="input-box">
-                <i class="fas fa-lock"></i><input type="password" id= "password" class="text" placeholder="Enter your password" required>
+                <i class="fas fa-lock"></i><input type="password" id= "password" class="text" placeholder="Password" required>
               </div>
               <div class="button input-box">
 								<!--<button type="button" class="text" onclick="doLogin();"> Login</button>-->
-              <input type=submit onclick="doLogin();" value="Go!">
-							<span id="loginItem"></span>
-
+              <input type="submit" onclick="doLogin()"  value="Go!">
               </div>
+							<span id="loginItem" style="color:red"></span>
               <div class="text sign-up-text">No account? <label for="flip">Register here</label></div>
             </div>
-        </form>
+					<!--	</form>-->
 
       </div>
 
 			<!--REGISTERATION HERE-->
         <div class="signup-form">
           <div class="title">Register</div>
-        <form action="home.html">
+	 <!-- <form>-->
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" id ="firstNameNew" class= "text" placeholder="Enter your first name" required>
+                <input type="text" id ="firstNameNew" class= "text" placeholder="Enter first name" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-user"></i>
-								<input type="text" id ="lastNameNew" class= "text" placeholder="Enter your first name" required>
+								<input type="text" id ="lastNameNew" class= "text" placeholder="Enter last name" required>
               </div>
 							<div class="input-box">
                 <i class="fas fa-user"></i>
@@ -85,19 +79,17 @@
 								<input type="text" id ="passwordNew" class= "text" placeholder="Enter password" required>
               </div>
               <div class="button input-box">
-                <input type="submit" onclick="register();" value="Register">
-								<span id="registerItem"></span>
+                <input type="submit" onclick="register()" value="Register">
               </div>
-
+							<span id="registerItem"></span>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
             </div>
-      </form>
+	<!-- </form>-->
 
     </div>
     </div>
-
     </div>
   </div>
-  
+
  </body>
 </html>
