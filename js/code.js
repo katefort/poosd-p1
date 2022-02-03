@@ -100,6 +100,39 @@ function doLogin()
 
 }
 
+function createContact()
+{
+	let newContactFirst = document.getElementById("newContactFirst").value;
+	let newContactLast = document.getElementById("newContactLast").value;
+	let newContactPhone = document.getElementById("newContactPhone").value;
+	let newContactEmail = document.getElementById("newContactEmail").value;
+	document.getElementById("contactAddResult").innerHTML = "";
+
+	let tmp = {firstname:newContactFirst,lastname:newContactLast,phone:newContactPhone,email:newContactEmail,id:userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/CreateContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactAddResult").innerHTML = err.message;
+	}
+}
+
 function saveCookie()
 {
 
