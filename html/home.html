@@ -13,8 +13,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type ="text/javascript" src = "js/code.js"></script>
-<link href="home.css" rel="stylesheet">
+<script type ="text/javascript" src = "js/code.js"></script> 
+<link href="css/home.css" rel="stylesheet">
+
                <!--<link href="css/home.css" rel="stylesheet">-->
 </head>
 
@@ -23,7 +24,7 @@
 
 <ul class="topnav">
   <li><a class="active" href="home.html">Home</a></li>
-  <li class="right"><a href="#" onclick="logout()">Logout</a></li>
+  <li class="right"><a onclick="logout()">Logout</a></li>
 	<li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Contacts</a>
     <div class="dropdown-content">
@@ -36,23 +37,51 @@
 
 <div style="padding:0 16px;">
   <div align="center"><h1>Welcome!</h1></div>
-	<form class="example" style="margin:auto;max-width:300px">
+	<div class="example" style="margin:auto;max-width:300px">
 	  <input type="text" placeholder="Search Contact" name="search2">
-	  <button type="submit" onclick="search()"; placeholder="go"><i class="fas fa-search"></i></button>
+	  <button type="submit" onclick="searchContacts()" placeholder="go"><i class="fas fa-search"></i></button>
+    <br>
+    <span id = "contactSearchResult"></span>
+    <p id = "contactList"></p>
 		<br>
-		<span id = "contactSearchResult" ></span> == $0
-		<p id="contactList"></p>
-		<br>
-	</form>
+
+  </div>
 
 
 </div>
+<br>
 
 <div style="padding:0 16px;">
+<!--Create contact right here ..........................................................................-->
+	<div class="sub" style="margin:auto;max-width:300px">
+    
+    <button2 type="submit" onclick= "showAndHide()" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins', sans-serif; font-weight:bold;"><i class="fa fa-user-plus"></i>&emsp;&emsp;Create Contact</button2>
+  <p><br></p>
+    <div id ="show" hidden>  <p><br></p>
+     <p><br></p>
+<!--Change Id's to Ids in javascript here.....-->
+     <div class="example"><input type="text" id ="hello" class= "text" placeholder="First Name" required></div><p></p>
+      <div class="example"><input type="text" id ="hello" class= "text" placeholder="Last Name" required></div><p></p>
+    <div class="example"><input type="text" id ="hello" class= "text" placeholder="Email" required></div><p></p>
+      <div class="example"><input type="text" id ="hello" class= "text" placeholder="Phone Number" required></div>
+      <p><br></p>
 
-	<form class="sub" action="/action_page.php" style="margin:auto;max-width:300px">
-	  <button2 type="submit" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins', sans-serif; font-weight:bold;"><i class="fa fa-user-plus"></i>&emsp;&emsp;Create Contact</button2>
-	</form>
+      <button2 type="submit" onclick= "create()" align= "center" style= "padding:20px; max-width:240px; background: #7d2ae8; color:black; font-family:'Poppins', sans-serif; font-weight:bold;"></i>&emsp;Create</button2>
+
+     <p><br></p>
+    </div>
+
+  </div>
+</div>
+<!--Create contact ends  here ..........................................................................-->
+
+<div style="padding:0 16px;">
+	<h4><br></h4>
+
+	<div class="sub" style="margin:auto;max-width:300px">
+		<button3 type="submit" onclick="" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Delete Contact</button3>
+
+  </div>
 
   <h4><br></h4>
 </div>
@@ -60,10 +89,10 @@
 <div style="padding:0 16px;">
 	<h4><br></h4>
 
-	<form class="sub" style="margin:auto;max-width:300px">
-		<button3 type="submit" onclick="" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Delete Contact</button3>
+	<div class="sub" style="margin:auto;max-width:300px">
+		<button3 type="submit" onclick="" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Update Contact</button3>
 
-	</form>
+  </div>
 
   <h4><br></h4>
 </div>
