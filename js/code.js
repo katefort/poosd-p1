@@ -1,12 +1,9 @@
 const urlBase = 'http://group26poosd.xyz/LAMPAPI';
 const extension = 'php';
 
-
-
 let userId = 0;
 let firstName = "";
 let lastName = "";
-
 
 //referenced from RickL
 function register()
@@ -37,20 +34,18 @@ function register()
 			{
 				if (this.readyState == 4 && this.status == 200)
 				{
-					document.getElementById("registerItem").innerHTML = "User Created";
-
 					let jsonObject= JSON.parse( xhr.responseText);
-;
-					saveCookie();
+					document.getElementById("registerItem").innerHTML = "Successfully Registered Please Login";
+					document.getElementById("registerItem").style.color = 'green';
+					return;
 //check to see if that is valid
-					window.location.href = "index.html";
 				}
-			};
+			}
 			xhr.send(jsonPayload);
 		} catch (err)
 		{
 			document.getElementById("registerItem").innerHTML= err.message;
-
+			document.getElementById("registerItem").style.color = 'red';
 		}
 
 }
@@ -113,12 +108,12 @@ function saveCookie()
 	date.setTime(date.getTime()+(minutes*60*1000));
 	document.cookie = "firstName= " + firstName + ",lastName = " + lastName + ", userId = "+userId +" , expires = "+date.toGMTString();
 }
-//=======================================================================================================================================================
+
 function logout()
 {
-    userId = 0;
-    firstName = "";
-    lastName = "";
-    window.location.href = "index.html";
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	document.cookie = "firstName= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+	window.location.href = "index.html";
 }
-
