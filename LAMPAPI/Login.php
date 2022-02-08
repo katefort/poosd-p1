@@ -17,7 +17,7 @@
 		$stmt = $conn->prepare("SELECT ID,firstName,lastName FROM Users WHERE Login=? AND Password =?");
 		$stmt->bind_param("ss", $inData["login"], $inData["password"]);
 		$stmt->execute();
-		$result = $stmt->get_result(); //Retrieves a result set from a prepared statement as a mysqli_result object.
+		$result = $stmt->get_result();
 
 		if( $row = $result->fetch_assoc()  )
 		{
@@ -34,7 +34,7 @@
 
 	function getRequestInfo()
 	{
-		return json_decode(file_get_contents('php://input'), true); //return assocciative array
+		return json_decode(file_get_contents('php://input'), true);
 	}
 
 	function sendResultInfoAsJson( $obj )
