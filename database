@@ -1,0 +1,24 @@
+create database CRUD;
+use CRUD;
+<---------------------------- Create Tables ---------------------------->
+CREATE TABLE `CRUD`.`Users` (
+`ID` INT NOT NULL AUTO_INCREMENT , `DateCreated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+`DateLastLoggedIn` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+`FirstName` VARCHAR(50) NOT NULL,
+`LastName` VARCHAR(50) NOT NULL,
+`Login` VARCHAR(50) NOT NULL,
+`Password` VARCHAR(50) NOT NULL , 
+PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+CREATE TABLE `CRUD`.`Contacts` (
+`ContactNumber` INT NOT NULL AUTO_INCREMENT , 
+`FirstName` VARCHAR(50) NOT NULL,
+`LastName` VARCHAR(50) NOT NULL,
+`Email` VARCHAR(255) NOT NULL,
+`Phone Number` VARCHAR(255) NOT NULL.
+`UserID` INT NOT NULL,
+PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+<------------------ Manually inserting Data ---------------------->
+USE COP4331;
+
+insert into Users (FirstName,LastName,Login,Password) VALUES ('Rick','Leinecker','RickL','COP4331');
