@@ -14,8 +14,13 @@
 <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type ="text/javascript" src = "js/code.js"></script> 
-<link href="css/home.css" rel="stylesheet">
-
+<link href="css/styles.css" rel="stylesheet">
+	<script type ="text/javascript">
+	document.addEventListener('DOMContentLoaded', function()
+		{
+		readCookie();
+		}, false);
+	</script>
                <!--<link href="css/home.css" rel="stylesheet">-->
 </head>
 
@@ -25,28 +30,24 @@
 <ul class="topnav">
   <li><a class="active" href="home.html">Home</a></li>
   <li class="right"><a onclick="logout()">Logout</a></li>
-	<li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Contacts</a>
-    <div class="dropdown-content">
-      <a href="contactlist.html">All Contacts</a>
-      <a href="#">Add Contact</a>
-      <a href="#">Delete Contact</a>
+  <!--deleted contact list her -->
     </div>
   </li>
 </ul>
-<!--Search contact right here ..........................................................................-->
+
 <div style="padding:0 16px;">
-  <div align="center"><h1>Welcome!</h1></div>
-	<div class="example" style="margin:auto;max-width:300px">
-	  <input type="text" placeholder="Search Contact" name="search2">
-	  <button type="submit" onclick="searchContacts()" placeholder="go"><i class="fas fa-search"></i></button>
-		
-    <br>
-    <span id = "contactSearchResult"></span>
-    <p id = "contactList"></p>
+  	<div align="center"><h1>Welcome!</h1></div>
+	<!--changed div class to examples here-->
+	<div class="examples" style="margin:auto; max-width:300px">
+		<input type="text" placeholder="Search Contact" id ="searchbar">
+		<button type="submit" onclick="searchContacts()" placeholder="go"><i class="fas fa-search"></i></button>
+
+		<br>
+		<span id = "contactSearchResult"></span>
+		<p id = "contactList"></p>
 		<br>
 
-  </div>
+  	</div>
 
 
 </div>
@@ -56,45 +57,75 @@
 <!--Create contact right here ..........................................................................-->
 	<div class="sub" style="margin:auto;max-width:300px">
     
-    <button2 type="submit" onclick= "showAndHide()" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins', sans-serif; font-weight:bold;"><i class="fa fa-user-plus"></i>&emsp;&emsp;Create Contact</button2>
+    <crudbutton type="submit" onclick= "showAndHide()" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins', sans-serif; font-weight:bold;"><i class="fa fa-user-plus"></i>&emsp;&emsp;Create Contact</crudbutton>
   <p><br></p>
     <div id ="show" hidden>  <p><br></p>
      <p><br></p>
 <!--Change Id's to Ids in javascript here.....-->
-     <div class="example"><input type="text" id ="hello" class= "text" placeholder="First Name" required></div><p></p>
-      <div class="example"><input type="text" id ="hello" class= "text" placeholder="Last Name" required></div><p></p>
-    <div class="example"><input type="text" id ="hello" class= "text" placeholder="Email" required></div><p></p>
-      <div class="example"><input type="text" id ="hello" class= "text" placeholder="Phone Number" required></div>
+     <div class="example"><input type="text" id ="newContactFirst" class= "text" placeholder="First Name" required></div><p></p>
+      <div class="example"><input type="text" id ="newContactLast" class= "text" placeholder="Last Name" required></div><p></p>
+    <div class="example"><input type="text" id ="newContactEmail" class= "text" placeholder="Email" required></div><p></p>
+      <div class="example"><input type="text" id ="newContactPhone" class= "text" placeholder="Phone Number" required></div>
       <p><br></p>
 
-      <button2 type="submit" onclick= "create()" align= "center" style= "padding:20px; max-width:240px; background: #7d2ae8; color:black; font-family:'Poppins', sans-serif; font-weight:bold;"></i>&emsp;Create</button2>
+      <crudbutton type="submit" sli onclick= "createContact();" style="padding:20px; max-width:200px; background: #7d2ae8; color:black; font-family:'Poppins', sans-serif; font-weight:bold;"></i>&emsp;Create</crudbutton>
 
      <p><br></p>
     </div>
 
   </div>
 </div>
+<span id = "contactAddResult"></span>
 <!--Create contact ends  here ..........................................................................-->
 
 <div style="padding:0 16px;">
 	<h4><br></h4>
 
 	<div class="sub" style="margin:auto;max-width:300px">
-		<button3 type="submit" onclick="" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Delete Contact</button3>
+		<crudbutton type="submit" onclick="andHide()" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Delete Contact</crudbutton>
+<p><br></p>
+    <div id ="shows" hidden>  <p><br></p>
+     <p><br></p>
+<!--Change Id's to Ids in javascript here.....-->
+     <div class="example"><input type="text" id ="deleteContactFirst" class= "text" placeholder="First Name" required></div><p></p>
+      <div class="example"><input type="text" id ="deleteContactLast" class= "text" placeholder="Last Name" required></div><p></p>
+      <p><br></p>
+<!--Change Id for this button to to what's in JS-->
+      <crudbutton type="submit"  onclick= "deleteContact();" style="padding:20px; max-width:200px; background: #7d2ae8; color:black; font-family:'Poppins', sans-serif; font-weight:bold;"></i>&emsp;Delete</crudbutton>
 
+     <p><br></p>
+    </div>
   </div>
-
-  <h4><br></h4>
+  <span id = "contactDeleteResult"></span>
 </div>
 
 <div style="padding:0 16px;">
 	<h4><br></h4>
 
 	<div class="sub" style="margin:auto;max-width:300px">
-		<button3 type="submit" onclick="" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fas fa-user-minus"></i>&emsp;&emsp;Update Contact</button3>
+		<crudbutton type="submit" onclick="showAnd()" placeholder="go" align= "center" style= "padding:20px; color:#333; font-family:'Poppins',sans-serif;font-weight:bold;"><i class="fa fa-user-plus"></i>&emsp;&emsp;Update Contact</crudbutton>
 
+		<p><br></p>
+    <div id ="showing" hidden >  <p><br></p>
+     <p><br></p>
+<!--Change Id's to Ids in javascript here.....-->
+     <div class="example"><input type="text" id ="updateContactFirst" class= "text" placeholder="First Name" required></div><p></p>
+      <div class="example"><input type="text" id ="updateContactLast" class= "text" placeholder="Last Name" required></div><p></p>
+    <div class="example"><input type="text" id ="updateContactPhone" class= "text" placeholder="Phone Number" required></div><p></p>
+    <div class="example"><input type="text" id ="updateContactEmail" class= "text" placeholder="Email" required></div><p></p>
+    <div class="example"><input type="text" id ="oldFirstName" class= "text" placeholder="Old First Name" required></div><p></p>
+    <div class="example"><input type="text" id ="oldLastName" class= "text" placeholder="Old Last Name" required></div><p></p>
+
+
+      <p><br></p>
+
+      <crudbutton type="submit"  onclick= "doUpdate();" style="padding:20px; max-width:200px; background: #7d2ae8; color:black; font-family:'Poppins', sans-serif; font-weight:bold;"></i>&emsp;Update</crudbutton>
+
+     <p><br></p>
+    </div>
   </div>
 
+  <span id = "contactUpdateResult"></span>
   <h4><br></h4>
 </div>
 
